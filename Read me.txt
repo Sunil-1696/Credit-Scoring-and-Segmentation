@@ -1,0 +1,38 @@
+Problem Statement:
+Credit scoring aims to determine the creditworthiness of individuals based on their credit profiles. By analyzing factors such as payment history, credit utilization ratio, and number of credit accounts, we can assign a credit score to each individual, providing a quantitative measure of their creditworthiness.
+
+The given dataset includes features such as age, gender, marital status, education level, employment status, credit utilization ratio, payment history, number of credit accounts, loan amount, interest rate, loan term, type of loan, and income level.
+
+Your task is to calculate credit scores and segment customers based on their credit scores to gain insights into different customer groups.
+
+
+
+
+Credit scoring analysis using several libraries like NumPy, pandas, seaborn, matplotlib, and Plotly. It involves performing data loading, descriptive statistics, data visualization, and correlation analysis. Here's a brief explanation of each section:
+
+Importing Packages: The script starts by importing necessary libraries for data analysis, visualization, and plotting. These include NumPy, pandas, seaborn, matplotlib, and Plotly.
+
+Loading the Data: The script reads the dataset from a CSV file named 'credit_scoring.csv' and stores it in a DataFrame called df. The data is then displayed using df.head() to show the first few rows.
+
+Descriptive Statistics: The script computes descriptive statistics for the numerical columns in the DataFrame using df.describe().T. The 'T' transposes the results for better readability.
+
+Checking Dataset Info: df.info() is used to display information about the dataset, including column data types and non-null counts.
+
+Distribution of Credit Utilization Ratio: The script uses seaborn's distplot and boxplot to visualize the distribution and outliers in the 'Credit Utilization Ratio' column.
+
+Loan Amount Distribution: The 'Loan Amount' distribution is visualized using seaborn's histplot.
+
+Correlation Analysis: The correlation between numerical columns is computed using pandas' corr() function and displayed as a heatmap using seaborn's heatmap.
+
+Categorical Column Value Counts: The script iterates through the categorical columns (not shown in the provided code) and prints the value counts of each category.
+
+Calculate Credit Scores: The code calculates credit scores for each customer using the complete FICO formula. The FICO formula considers various factors such as Payment History, Credit Utilization Ratio, Number of Credit Accounts, Education Level, and Employment Status, each weighted differently. The credit score for each customer is then stored in a new column named credit_score.
+
+Segmentation Based on Credit Scores: The code segments customers into four categories: "Poor," "Fair," "Good," and "Excellent" based on their calculated credit scores. It uses the pd.cut() function to bin the credit scores into specified ranges and assigns labels to each segment. The counts of customers in each segment are then displayed.
+
+Visualize Segments Using Plotly: The code uses Plotly to create a scatter plot to visualize the customer segments based on their credit scores. Each segment is represented by a different color (green, blue, red, yellow), making it easy to distinguish between the segments. The x-axis represents the customer index, and the y-axis represents the credit score.
+
+Kmeans Algorithm: The code performs K-means clustering to further segment the customers based on their credit scores. It uses the elbow method to determine the optimal number of clusters (k) for the K-means algorithm. The sum of square distances (Euclidean distances) for different values of k is calculated and plotted to find the "elbow" point where the optimal k value lies. In this case, it seems to be using k=4 as the number of clusters.
+
+Visualize Segments Using Plotly (K-means): After performing K-means clustering, the code adds a new column 'Cluster' to the DataFrame to store the cluster labels for each customer. It then visualizes the segments using Plotly in a similar way as before, with each segment represented by a different color (green, blue, yellow, red). The x-axis represents the customer index, and the y-axis represents the credit score.
+
